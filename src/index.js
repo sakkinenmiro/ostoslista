@@ -4,6 +4,18 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+const express = require('express')
+const cors = require('cors')
+
+const app = express()
+app.use(cors())
+app.use(express.json())
+app.use(express.urlencoded({extended: false}))
+
+const port = 3001
+
+app.listen(port)
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

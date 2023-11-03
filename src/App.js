@@ -1,6 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
 
+const express = require('express');
+const app = express();
+app.get('/', (req, res) => {
+  res.send('Welcome to CORS server')
+})
+app.get('/cors', (req, res) => {
+  res.send('This has CORS enabled')
+})
+app.listen(8080, () => {
+  console.log('listening on port 8080')
+})
+
 function App() {
   return (
     <div className="App">
